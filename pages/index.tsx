@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import fetchProducts from '../fetchProducts'
 
 interface Products {
     nombre: string;
@@ -20,7 +21,7 @@ const Home: NextPage<Prop> = ({ data }) => {
     <div className="h-72">
       {
         data.map(d => (
-          <li>
+          <li key={d.id}>
             {d.nombre}
           </li>
         ))
@@ -30,8 +31,7 @@ const Home: NextPage<Prop> = ({ data }) => {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/hello")
-  const data = await res.json();
+  const data = await fetchProducts();
 
   return {
     props: { data }, // will be passed to the page component as props
