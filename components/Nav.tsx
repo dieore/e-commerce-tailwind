@@ -26,7 +26,7 @@ const Nav: React.FC = () => {
                 </div>
                 <div
                     onClick={() => setOpenMenu(!openMenu)}
-                    className="xl:hidden md:flex col-span-6 flex items-center justify-self-end"
+                    className="xxl:hidden md:flex col-span-6 flex items-center justify-self-end"
                 >
                     <img src="/img/burguer.png" className="h-8 cursor-pointer" />
                 </div>

@@ -1,41 +1,50 @@
 import type { NextPage } from 'next'
-import fetchProducts from '../fetchProducts'
+import clientPromise from '../lib/mongodb'
 
 interface Products {
-    nombre: string;
-    descripcion: string;
-    stock: number;
-    precio: number;
-    imagen: string;
-    promo: boolean;
-    categoriaId: string;
-    id: string;
+	nombre: string;
+	descripcion: string;
+	stock: number;
+	precio: number;
+	imagen: string;
+	promo: boolean;
+	categoriaId: string;
+	id: string;
 }
 
 type Prop = {
-  data: Products[]
+	data: Products[]
 }
 
-const Home: NextPage<Prop> = ({ data }) => {
-  return (
-    <div className="h-72">
-      {
-        data.map(d => (
-          <li key={d.id}>
-            {d.nombre}
-          </li>
-        ))
-      }
-    </div>
-  )
+const Home: NextPage<Prop> = ({ data }): JSX.Element => {
+	return (
+		<div className="h-72">
+			{
+				data.map(d => (
+					<li key={d.id}>
+						{d.nombre}
+					</li>
+				))
+			}
+		</div>
+	)
 }
 
-export async function getStaticProps() {
-  const data = await fetchProducts();
+export async function getStaticProps(): Promise<any> {
+	const client = await clientPromise;
 
-  return {
-    props: { data }, // will be passed to the page component as props
-  }
+	try {
+		const db = client.db();
+		const res = await db.collection("products").find({}).limit(8).toArray();
+		const data = await JSON.parse(JSON.stringify(res));
+		return {
+			props: { data }
+		}
+	} catch (err) {
+		return {
+			props: {}
+		}
+	}
 }
 
 export default Home;

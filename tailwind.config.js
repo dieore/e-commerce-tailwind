@@ -11,6 +11,8 @@ module.exports = {
     },
     extend: {},
     screens: {
+      'xxl': { 'max': '3000px' },
+      // => @media (max-width: 1279px) { ... }
       'xl': { 'max': '1500px' },
       // => @media (max-width: 1279px) { ... }
 
