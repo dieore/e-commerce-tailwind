@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import clientPromise from '../lib/mongodb'
+import ProductCard from '../components/ProductCard'
 
 interface Products {
 	nombre: string;
@@ -9,7 +10,7 @@ interface Products {
 	imagen: string;
 	promo: boolean;
 	categoriaId: string;
-	id: string;
+	_id: string;
 }
 
 type Prop = {
@@ -18,14 +19,31 @@ type Prop = {
 
 const Home: NextPage<Prop> = ({ data }): JSX.Element => {
 	return (
-		<div className="h-72">
-			{
-				data.map(d => (
-					<li key={d.id}>
-						{d.nombre}
-					</li>
-				))
-			}
+		<div className="p-8 bg-gray-200">
+			<h2 className="p-4 text-gray-600 text-2xl font-light">Más vendidos</h2>
+			<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2">
+				{
+					data.map(d => (
+						<ProductCard product={d} />
+					))
+				}
+			</div>
+			<h2 className="p-4 text-gray-600 text-2xl font-light">Oferta</h2>
+			<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2">
+				{
+					data.map(d => (
+						<ProductCard product={d} />
+					))
+				}
+			</div>
+			<h2 className="p-4 text-gray-600 text-2xl font-light">Destacados</h2>
+			<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2">
+				{
+					data.map(d => (
+						<ProductCard product={d} />
+					))
+				}
+			</div>
 		</div>
 	)
 }
@@ -35,7 +53,7 @@ export async function getStaticProps(): Promise<any> {
 
 	try {
 		const db = client.db();
-		const res = await db.collection("products").find({}).limit(8).toArray();
+		const res = await db.collection("products").find({}).limit(5).toArray();
 		const data = await JSON.parse(JSON.stringify(res));
 		return {
 			props: { data }

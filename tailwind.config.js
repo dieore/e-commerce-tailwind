@@ -2,6 +2,13 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    minHeight: {
+      '0': '0',
+      '1/4': '25%',
+      '1/2': '50%',
+      '3/4': '75%',
+      'full': '100%'
+    },
     fontFamily: {
       'sans': ['ui-sans-serif', 'system-ui', 'Inter',],
       'serif': ['ui-serif', 'Georgia'],
@@ -30,7 +37,7 @@ module.exports = {
     extend: {},
     variants: {
       transitionProperty: ['responsive', 'motion-safe', 'motion-reduce']
-    }  
+    }
   },
   plugins: [],
 }
