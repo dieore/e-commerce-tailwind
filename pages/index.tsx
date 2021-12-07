@@ -54,9 +54,10 @@ export async function getStaticProps(): Promise<any> {
 	const db = client.db();
 	const res = await db.collection("products").find({}).limit(5).toArray();
 	const data = await JSON.parse(JSON.stringify(res));
-	
+
 	return {
-		props: { data }
+		props: { data },
+		revalidate: 10
 	}
 }
 
