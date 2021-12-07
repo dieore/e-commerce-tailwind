@@ -19,7 +19,7 @@ type Props = {
 const ProductDetail: React.FC<Props> = ({ product }): JSX.Element => {
     return (
         <>
-            {product.nombre}
+            {product?.nombre}
         </>
     )
 };
@@ -41,7 +41,7 @@ export async function getStaticPaths() {
 
     return {
         paths: params,
-        fallback: true,
+        fallback: 'blocking',
     };
 }
 
@@ -59,6 +59,7 @@ export async function getStaticProps({ params }) {
     const product = await JSON.parse(JSON.stringify(res));
 
     return {
-        props: { product }
+        props: { product },
+        revalidate: 10
     }
 }
