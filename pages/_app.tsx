@@ -8,9 +8,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Nav />
-      <Slider images={["https://i.picsum.photos/id/1006/3000/2000.jpg?hmac=x83pQQ7LW1UTo8HxBcIWuRIVeN_uCg0cG6keXvNvM8g",
-        "https://i.picsum.photos/id/101/2621/1747.jpg?hmac=cu15YGotS0gIYdBbR1he5NtBLZAAY6aIY5AbORRAngs",
-        "https://i.picsum.photos/id/1010/5184/3456.jpg?hmac=7SE0MNAloXpJXDxio2nvoshUx9roGIJ_5pZej6qdxXs"]} />
+      <Slider images={["https://http2.mlstatic.com/D_NQ_749672-MLA48390149013_112021-OO.webp",
+        "https://http2.mlstatic.com/D_NQ_808146-MLA48432871146_122021-OO.webp",
+        "https://http2.mlstatic.com/D_NQ_884579-MLA48382963371_112021-OO.webp"]} />
       <Component {...pageProps} />
       <Footer />
     </>

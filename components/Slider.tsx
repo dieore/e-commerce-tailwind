@@ -57,8 +57,8 @@ const Slider: React.FC<Props> = ({ images }) => {
     };
 
     return (
-        <div className="grid grid-cols-9 justify-items-center bg-center bg-no-repeat bg-cover h-72 items-center" style={{ backgroundImage: `url(${auto ? autoImage : image})` }}>
-            <button className="col-start-1 rounded-full w-8 h-8 bg-white" onClick={() => onChangeSlider("back")}>{""}</button>
+        <div className="grid grid-cols-9 justify-items-center bg-center bg-no-repeat bg-cover h-80 items-center" style={{ backgroundImage: `url(${auto ? autoImage : image})`}}>
+            <button className="col-start-1 rounded-full w-8 h-8 bg-white" onClick={() => onChangeSlider("back")}>{"<"}</button>
             <div className="flex col-start-5 self-end m-4">
                 {
                     images.length > 0 ? (
@@ -68,7 +68,7 @@ const Slider: React.FC<Props> = ({ images }) => {
                     ) : null
                 }
             </div>
-            <button className="col-start-9 border border-1 border-solid rounded-full w-8 h-8 bg-white" onClick={() => onChangeSlider("forward")}>{""}</button>
+            <button className="col-start-9 border border-1 border-solid rounded-full w-8 h-8 bg-white" onClick={() => onChangeSlider("forward")}>{">"}</button>
         </div >
     )
 };

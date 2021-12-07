@@ -13,18 +13,18 @@ interface Products {
 	_id: string;
 }
 
-type Prop = {
+type Props = {
 	data: Products[]
 }
 
-const Home: NextPage<Prop> = ({ data }): JSX.Element => {
+const Home: NextPage<Props> = ({ data }): JSX.Element => {
 	return (
 		<div className="p-8 bg-gray-200">
 			<h2 className="p-4 text-gray-600 text-2xl font-light">Más vendidos</h2>
 			<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2">
 				{
 					data.map(d => (
-						<ProductCard product={d} />
+						<ProductCard key={d._id} product={d} />
 					))
 				}
 			</div>
@@ -32,7 +32,7 @@ const Home: NextPage<Prop> = ({ data }): JSX.Element => {
 			<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2">
 				{
 					data.map(d => (
-						<ProductCard product={d} />
+						<ProductCard key={d._id} product={d} />
 					))
 				}
 			</div>
@@ -40,7 +40,7 @@ const Home: NextPage<Prop> = ({ data }): JSX.Element => {
 			<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2">
 				{
 					data.map(d => (
-						<ProductCard product={d} />
+						<ProductCard key={d._id} product={d} />
 					))
 				}
 			</div>
@@ -51,17 +51,12 @@ const Home: NextPage<Prop> = ({ data }): JSX.Element => {
 export async function getStaticProps(): Promise<any> {
 	const client = await clientPromise;
 
-	try {
-		const db = client.db();
-		const res = await db.collection("products").find({}).limit(5).toArray();
-		const data = await JSON.parse(JSON.stringify(res));
-		return {
-			props: { data }
-		}
-	} catch (err) {
-		return {
-			props: {}
-		}
+	const db = client.db();
+	const res = await db.collection("products").find({}).limit(5).toArray();
+	const data = await JSON.parse(JSON.stringify(res));
+	
+	return {
+		props: { data }
 	}
 }
 
