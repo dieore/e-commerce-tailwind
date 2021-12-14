@@ -28,9 +28,9 @@ type Props = {
 const Home: NextPage<Props> = ({ products, categories }): JSX.Element => {
 	return (
 		<>
-			<div className="p-8 bg-gray-200">
-				<h2 className="p-4 text-gray-600 text-2xl font-light">Más vendidos</h2>
-				<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2">
+			<div className="p-8 bg-gray-200 sm:p-0">
+				<h2 className="p-4 text-gray-600 text-2xl font-light sm:pt-7">Más vendidos</h2>
+				<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2 sm:gap-3">
 					{
 						products.map(p => (
 							<ProductCard key={p._id} product={p} />
@@ -38,7 +38,7 @@ const Home: NextPage<Props> = ({ products, categories }): JSX.Element => {
 					}
 				</div>
 				<h2 className="p-4 text-gray-600 text-2xl font-light">Ofertas</h2>
-				<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2">
+				<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2 sm:gap-3">
 					{
 						products.map(p => (
 							<ProductCard key={p._id} product={p} />
