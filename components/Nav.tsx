@@ -5,28 +5,24 @@ const Nav: React.FC = () => {
 
     useEffect(() => {
         window.addEventListener("resize", () => {
-            if (document.body.clientWidth > 768) setOpenMenu(false);
+            if (document.body.clientWidth > 920) setOpenMenu(false);
         })
     }, [])
 
     return (
         <>
-            <nav className="sticky grid grid-cols-12 grid-rows-1 p-5 bg-green-700">
-                <img src="/img/logo.png" className="md:col-span-6 h-12 col-span-2 cursor-pointer" />
-                <div className="md:hidden col-span-10 flex items-center justify-self-end gap-6">
-                    <input placeholder="Buscar producto" className="border border-solid border-green-100 outline-none focus:border-green-300" />
-                    <a className="text-white hover:underline cursor-pointer font-light tracking-wide">Inicio</a>
-                    <a className="text-white hover:underline cursor-pointer font-light tracking-wide">Categorias</a>
-                    <a className="text-white hover:underline cursor-pointer font-light tracking-wide">Productos</a>
-                    <a className="text-white hover:underline cursor-pointer font-light tracking-wide">Destacados</a>
-                    <a className="text-white hover:underline cursor-pointer font-light tracking-wide">Promos</a>
-                    <a className="text-white hover:underline cursor-pointer font-light tracking-wide">Contacto</a>
-                    <img src="/img/faceIcon.png" className="h-8 cursor-pointer" />
-                    <img src="/img/instaIcon.png" className="h-8 cursor-pointer" />
+            <nav className="sticky top-0 z-10 grid grid-cols-3 p-5 bg-green-900 items-center">
+                <p className="font-extrabold text-3xl text-white tracking-wider cursor-pointer md:text-2xl">TIENDAMAS</p>
+                <input placeholder="Buscar producto" className="h-8 rounded lg:col-start-3 md:col-span-2 lg:mx-6 border border-solid outline-none focus:border-green-300 p-2" />
+                <div className="flex items-center justify-evenly lg:hidden cursor-pointer font-light tracking-wide text-white">
+                    <a>Categorias</a>
+                    <a>Productos</a>
+                    <a>Destacados</a>
+                    <a>Promos</a>
                 </div>
                 <div
                     onClick={() => setOpenMenu(!openMenu)}
-                    className="xxl:hidden md:flex col-span-6 flex items-center justify-self-end"
+                    className="xxl:hidden col-start-4 lg:flex items-center justify-self-end"
                 >
                     <img src="/img/burguer.png" className="h-8 cursor-pointer" />
                 </div>
