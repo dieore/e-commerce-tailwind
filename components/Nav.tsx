@@ -29,19 +29,11 @@ const Nav: React.FC = () => {
             </nav>
             {
                 openMenu && (
-                    <div className="grid grid-cols-6 p-5 text-center bg-green-800">
-                        <a className="text-white hover:underline cursor-pointer font-medium col-span-6 mb-5">Inicio</a>
-                        <a className="text-white hover:underline cursor-pointer font-medium col-span-6 mb-5">Categorias</a>
-                        <a className="text-white hover:underline cursor-pointer font-medium col-span-6 mb-5">Productos</a>
-                        <a className="text-white hover:underline cursor-pointer font-medium col-span-6 mb-5">Destacados</a>
-                        <a className="text-white hover:underline cursor-pointer font-medium col-span-6 mb-5">Promos</a>
-                        <a className="text-white hover:underline cursor-pointer font-medium col-span-6 mb-5">Contacto</a>
-                        <div className="col-span-6 flex mb-5 justify-center gap-3">
-                            <img src="/img/faceIcon.png" className="h-8 cursor-pointer" />
-                            <img src="/img/instaIcon.png" className="h-8 cursor-pointer" />
-                        </div>
-                        <input placeholder="Buscar producto" className="mt-5 col-span-6 mb-5 justify-self-center border border-solid border-green-100 outline-none focus:border-green-300" />
-
+                    <div className="fixed h-full w-3/6 z-20 5 bg-green-900 flex flex-col text-white">
+                        <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Categorias</a>
+                        <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Productos</a>
+                        <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Destacados</a>
+                        <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Promos</a>
                     </div>
                 )
             }
