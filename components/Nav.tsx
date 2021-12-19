@@ -11,32 +11,43 @@ const Nav: React.FC = () => {
 
     return (
         <>
-            <nav className="sticky top-0 z-10 grid grid-cols-4 p-5 bg-green-900 items-center lg:grid-cols-3 sm:grid-rows-2 sm:grid-cols-2">
-                <p className="font-extrabold text-3xl text-white tracking-wider cursor-pointer md:text-2xl sm:text-lg">TIENDAMAS</p>
-                <input placeholder="Buscar producto" className="h-8 lg:mx-2 border border-solid outline-none focus:border-green-300 p-2 rounded md:col-span-2 sm:row-start-2 sm:col-start-1 sm:mx-0 sm:col-span-full sm:h-7" />
-                <div className="flex items-center justify-evenly lg:hidden cursor-pointer tracking-wide text-white col-start-3 col-span-2">
+            {
+                openMenu && (
+                    <div className="fixed h-full w-3/6 z-20 bg-green-900 text-white flex flex-col justify-between">
+                        <div className="flex flex-col">
+                            <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Categorias</a>
+                            <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Productos</a>
+                            <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Destacados</a>
+                            <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Promos</a>
+                            <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Ayuda</a>
+                        </div>
+                        <a href="/" className="font-extrabold text-3xl tracking-wider cursor-pointer p-5 self-center">TIENDAMAS</a>
+                    </div>
+                )
+            }
+            <nav className="sticky top-0 z-10 grid grid-cols-2 grid-rows-3 p-3 bg-green-900 items-center">
+                <a href="/" className="font-extrabold text-3xl text-white tracking-wider cursor-pointer">TIENDAMAS</a>
+                <img
+                    src="/img/burguer.png"
+                    onClick={() => setOpenMenu(!openMenu)}
+                    className="h-8 cursor-pointer xxl:hidden lg:flex justify-self-end"
+                />
+
+                <hr className="grid col-span-2" />
+                <input placeholder="Buscar producto" className="p-1 border border-solid outline-none focus:border-green-300 rounded" />
+                <div className="flex items-center justify-between lg:hidden cursor-pointer text-white mx-4">
                     <a className="hover:underline">Categorias</a>
                     <a className="hover:underline">Productos</a>
                     <a className="hover:underline">Destacados</a>
                     <a className="hover:underline">Promos</a>
+                    <a className="hover:underline cursor-pointer">Ayuda</a>
                 </div>
-                <div
+                <img
+                    src="/img/shop.png"
                     onClick={() => setOpenMenu(!openMenu)}
-                    className="xxl:hidden col-start-4 lg:flex items-center justify-self-end sm:col-start-2"
-                >
-                    <img src="/img/burguer.png" className="h-8 cursor-pointer" />
-                </div>
+                    className="h-8 cursor-pointer xxl:hidden lg:flex justify-self-end"
+                />
             </nav>
-            {
-                openMenu && (
-                    <div className="fixed h-full w-3/6 z-20 5 bg-green-900 flex flex-col text-white">
-                        <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Categorias</a>
-                        <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Productos</a>
-                        <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Destacados</a>
-                        <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Promos</a>
-                    </div>
-                )
-            }
         </>
     )
 };

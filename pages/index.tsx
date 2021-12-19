@@ -3,6 +3,9 @@ import clientPromise from '../lib/mongodb';
 import ProductCard from '../components/ProductCard';
 import InfoCards from '../components/InfoCards';
 import PopularCategories from '../components/PopularCategories';
+import Slider from '../components/Slider'
+import { useEffect } from 'react';
+import ProductService from '../services/ProductService'
 
 interface Products {
 	nombre: string;
@@ -25,9 +28,24 @@ type Props = {
 	categories: Categories[];
 }
 
+
 const Home: NextPage<Props> = ({ products, categories }): JSX.Element => {
+
+
+	useEffect(() => {
+		(async () => {
+			// const res = await ProductService.findById("617b007670e4c2107d188aad");
+			const res = await ProductService.create({nombre: "Sisisi", stock: 22});
+			console.log(res, "aca")
+		})()
+	}, [])
+
+
 	return (
 		<>
+			<Slider images={["https://http2.mlstatic.com/D_NQ_749672-MLA48390149013_112021-OO.webp",
+				"https://http2.mlstatic.com/D_NQ_808146-MLA48432871146_122021-OO.webp",
+				"https://http2.mlstatic.com/D_NQ_884579-MLA48382963371_112021-OO.webp"]} />
 			<div className="p-8 bg-gray-200 sm:p-0">
 				<h2 className="p-4 text-gray-600 text-2xl font-light sm:pt-7">Más vendidos</h2>
 				<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2 sm:gap-3">

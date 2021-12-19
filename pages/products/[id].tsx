@@ -1,4 +1,5 @@
 import { ObjectId } from 'bson';
+import ProductDetailCard from '../../components/ProductDetailCard';
 import clientPromise from '../../lib/mongodb.js'
 
 interface Product {
@@ -18,9 +19,9 @@ type Props = {
 
 const ProductDetail: React.FC<Props> = ({ product }): JSX.Element => {
     return (
-        <>
-            {product?.nombre}
-        </>
+        <div className="p-8 bg-gray-200">
+            <ProductDetailCard product={product} />
+        </div>
     )
 };
 
