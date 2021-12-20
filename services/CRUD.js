@@ -18,6 +18,10 @@ class CRUD {
     async create(data) {
         return await this.http.post("/", data);
     }
+
+    async update(id, data) {
+        return await this.http.patch("/" + id, data);
+    }
 }
 
 export default CRUD;
