@@ -32,13 +32,13 @@ type Props = {
 const Home: NextPage<Props> = ({ products, categories }): JSX.Element => {
 
 
-	useEffect(() => {
-		(async () => {
-			// const res = await ProductService.findById("617b007670e4c2107d188aad");
-			const res = await ProductService.create({nombre: "Sisisi", stock: 22});
-			console.log(res, "aca")
-		})()
-	}, [])
+	// useEffect(() => {
+	// 	(async () => {
+	// 		const resp = await ProductService.findById("617b007670e4c2107d188aad");
+	// 		const res = await ProductService.update("617b007670e4c2107d188aad", {nombre: "Sisisi"});
+	// 		console.log(res, "aca")
+	// 	})()
+	// }, [])
 
 
 	return (

@@ -19,7 +19,7 @@ type Props = {
 
 const ProductDetail: React.FC<Props> = ({ product }): JSX.Element => {
     return (
-        <div className="p-8 bg-gray-200">
+        <div className="p-4 bg-gray-200">
             <ProductDetailCard product={product} />
         </div>
     )

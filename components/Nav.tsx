@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import AppContext from '../AppContext';
 
 const Nav: React.FC = () => {
-    const [openMenu, setOpenMenu] = useState<boolean>(false);
+    const { openMenu, setOpenMenu } = useContext<any>(AppContext);
 
     useEffect(() => {
         window.addEventListener("resize", () => {
@@ -21,7 +22,7 @@ const Nav: React.FC = () => {
                             <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Promos</a>
                             <a className="hover:underline hover:bg-green-700 p-5 cursor-pointer">Ayuda</a>
                         </div>
-                        <a href="/" className="font-extrabold text-3xl tracking-wider cursor-pointer p-5 self-center">TIENDAMAS</a>
+                        <a href="/" className="font-extrabold text-3xl tracking-wider cursor-pointer p-5 self-center md:text-base">TIENDAMAS</a>
                     </div>
                 )
             }
