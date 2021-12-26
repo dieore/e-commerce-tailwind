@@ -97,8 +97,7 @@ const ProductDetailCard: React.FC<Props> = ({ product }): JSX.Element => {
                     <div className="h-60 flex flex-col justify-between">
                         <button className="border border-green-900 p-2 text-green-900 rounded hover:opacity-95">Agregar al carrito</button>
                         <button className="border p-2 bg-green-800 text-white rounded hover:opacity-95">Comprar ahora</button>
-                        <hr />
-                        <div className="flex justify-between lg:flex-col h-28">
+                        <div className="flex justify-between flex-col h-28">
                             <p className="text-green-900 text-sm font-medium hover:underline cursor-pointer">Envío a destino | Ver zona de entrega</p>
                             <p className="text-sm hover:underline cursor-pointer">¿Dudas? Contacta a un vendedor</p>
                             <p className="text-sm hover:underline cursor-pointer">Venta telefónica o por whatsapp</p>
