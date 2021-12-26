@@ -15,10 +15,11 @@ interface Product {
 
 type Props = {
     product: Product;
+    showDetails: boolean;
 }
 
-const ProductCard: React.FC<Props> = ({ product }): JSX.Element => {
-    const [hover, setHover] = useState<boolean>(false);
+const ProductCard: React.FC<Props> = ({ product, showDetails }): JSX.Element => {
+    const [hover, setHover] = useState<boolean>(showDetails);
     const [mobile, setMobile] = useState<boolean>()
     const { nombre, descripcion, stock, precio, imagen, promo, _id, categoriaId } = product;
 
@@ -29,7 +30,7 @@ const ProductCard: React.FC<Props> = ({ product }): JSX.Element => {
                 setHover(true);
             } else {
                 setMobile(false);
-                setHover(false);
+                if (!showDetails) setHover(false);
             }
         })
     }, [])
@@ -40,7 +41,7 @@ const ProductCard: React.FC<Props> = ({ product }): JSX.Element => {
         <Link href={`/products/${_id}`}>
             <div
                 onMouseOver={() => !mobile && setHover(true)}
-                onMouseLeave={() => !mobile && setHover(false)}
+                onMouseLeave={() => !mobile && !showDetails && setHover(false)}
                 className={hover ? "rounded bg-white w-full hover:shadow-2xl cursor-pointer" : "h-80 rounded bg-white w-full hover:shadow-2xl cursor-pointer"}
             >
                 <div className="block rounded">

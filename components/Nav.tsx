@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import Link from "next/link";
 import AppContext from '../AppContext';
 
 const Nav: React.FC = () => {
@@ -44,7 +45,7 @@ const Nav: React.FC = () => {
                 </div>
                 <div className="flex items-center justify-between lg:hidden cursor-pointer text-white w-2/5">
                     <a onMouseOver={() => setShowCategories(true)} onMouseLeave={() => setShowCategories(false)} className="hover:underline">Categorias</a>
-                    <a className="hover:underline">Productos</a>
+                    <Link href="/products" ><a className="hover:underline">Productos</a></Link>
                     <a className="hover:underline">Destacados</a>
                     <a className="hover:underline">Promos</a>
                     <a className="hover:underline">Ayuda</a>
@@ -63,7 +64,7 @@ const Nav: React.FC = () => {
                                 <a className="hover:underline p-5 cursor-pointer">Categorias</a>
                                 {showCategories && <Categories/>}
                             </div>
-                            <a className="hover:underline p-5 cursor-pointer">Productos</a>
+                            <a href="/products" className="hover:underline p-5 cursor-pointer">Productos</a>
                             <a className="hover:underline p-5 cursor-pointer">Destacados</a>
                             <a className="hover:underline p-5 cursor-pointer">Promos</a>
                             <a className="hover:underline p-5 cursor-pointer">Contacto</a>
@@ -80,7 +81,7 @@ export default Nav;
 
 const Categories = () => {
     return (
-        <div className=" w-full bg-green-900">
+        <div className="w-full bg-green-900">
             <ul>
                 <li className="hover:underline cursor-pointer p-3 text-sm">Categoria 1</li>
                 <li className="hover:underline cursor-pointer p-3 text-sm">Categoria 2</li>

@@ -28,10 +28,7 @@ type Props = {
 	categories: Categories[];
 }
 
-
 const Home: NextPage<Props> = ({ products, categories }): JSX.Element => {
-
-
 	// useEffect(() => {
 	// 	(async () => {
 	// 		const resp = await ProductService.findById("617b007670e4c2107d188aad");
@@ -51,7 +48,7 @@ const Home: NextPage<Props> = ({ products, categories }): JSX.Element => {
 				<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2 sm:gap-3">
 					{
 						products.map(p => (
-							<ProductCard key={p._id} product={p} />
+							<ProductCard showDetails={false} key={p._id} product={p} />
 						))
 					}
 				</div>
@@ -59,7 +56,7 @@ const Home: NextPage<Props> = ({ products, categories }): JSX.Element => {
 				<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2 sm:gap-3">
 					{
 						products.map(p => (
-							<ProductCard key={p._id} product={p} />
+							<ProductCard showDetails={false} key={p._id} product={p} />
 						))
 					}
 				</div>

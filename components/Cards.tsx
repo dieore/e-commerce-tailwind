@@ -5,7 +5,7 @@ type Props = {
     extra: string;
 }
 
-const LittleCard: React.FC<Props> = ({ title, subtitle, image, extra }) => {
+const Cards: React.FC<Props> = ({ title, subtitle, image, extra }) => {
     return (
         <div className="w-full bg-white h-48 flex flex-col text-center justify-evenly items-center shadow-md rounded">
             <img src={image.src} />
@@ -16,4 +16,4 @@ const LittleCard: React.FC<Props> = ({ title, subtitle, image, extra }) => {
     )
 };
 
-export default LittleCard;
+export default Cards;
