@@ -1,10 +1,14 @@
 import { NextPage } from "next";
-import Auth from "../components/Auth";
+import AuthCard from "../components/Authcard";
 
-const Login: NextPage = (): JSX.Element => {
-    return (
-        <Auth/>
-    )
-};
+const Login: NextPage = (): JSX.Element => (
+    <AuthCard
+        title="¡Bienvenido!"
+        buttonTitle="Iniciar sesión"
+        buttonSubtitle="Crear cuenta"
+        route="/register"
+        action={() => console.log("Click")}
+    />
+)
 
 export default Login;
