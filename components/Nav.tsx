@@ -4,7 +4,7 @@ import AppContext from '../AppContext';
 
 const Nav: React.FC = () => {
     const { openMenu, setOpenMenu } = useContext<any>(AppContext);
-    const [showCategories, setShowCategories] = useState(true);
+    const [showCategories, setShowCategories] = useState(false);
 
     useEffect(() => {
         window.addEventListener("resize", () => {
@@ -36,14 +36,15 @@ const Nav: React.FC = () => {
                         src="/img/shop.png"
                         // onClick={() => setOpenMenu(!openMenu)}
                         className="h-7 cursor-pointer xxl:hidden lg:flex justify-self-end"
-                    />
+                    /> 
                     <img
                         src="/img/burguer.png"
                         onClick={() => setOpenMenu(!openMenu)}
                         className="h-7 pl-4 cursor-pointer"
                     />
                 </div>
-                <div className="flex items-center justify-between lg:hidden cursor-pointer text-white w-2/5">
+                <div className="flex items-center justify-between lg:hidden cursor-pointer text-white w-3/6">
+                    <Link href="/login" ><a className="hover:underline hover:text-green-900 hover:bg-white bg-green-800 p-1 px-3 rounded">Ingresar</a></Link>
                     <a onMouseOver={() => setShowCategories(true)} onMouseLeave={() => setShowCategories(false)} className="hover:underline">Categorias</a>
                     <Link href="/products" ><a className="hover:underline">Productos</a></Link>
                     <a className="hover:underline">Destacados</a>
@@ -60,9 +61,9 @@ const Nav: React.FC = () => {
                 openMenu && (
                     <div className="bg-green-900 fixed w-3/6 h-full text-white flex flex-col justify-between z-20">
                         <div className="flex flex-col">
-                            <div onMouseOver={() => setShowCategories(true)} onMouseLeave={() => setShowCategories(false)} className="flex items-baseline justify-between">
+                            <div onMouseOver={() => setShowCategories(true)} onMouseLeave={() => setShowCategories(false)} className=" flex flex-col justify-center">
                                 <a className="hover:underline p-5 cursor-pointer">Categorias</a>
-                                {showCategories && <Categories/>}
+                                {showCategories && <Categories />}
                             </div>
                             <a href="/products" className="hover:underline p-5 cursor-pointer">Productos</a>
                             <a className="hover:underline p-5 cursor-pointer">Destacados</a>
@@ -81,14 +82,12 @@ export default Nav;
 
 const Categories = () => {
     return (
-        <div className="w-full bg-green-900">
-            <ul>
-                <li className="hover:underline cursor-pointer p-3 text-sm">Categoria 1</li>
-                <li className="hover:underline cursor-pointer p-3 text-sm">Categoria 2</li>
-                <li className="hover:underline cursor-pointer p-3 text-sm">Categoria 3</li>
-                <li className="hover:underline cursor-pointer p-3 text-sm">Categoria 4</li>
-                <li className="hover:underline cursor-pointer p-3 text-sm">Categoria 5</li>
-            </ul>
-        </div>
+        <ul className="pl-5 text-sm">
+            <li className="hover:underline cursor-pointer p-3">Categoria 1</li>
+            <li className="hover:underline cursor-pointer p-3">Categoria 2</li>
+            <li className="hover:underline cursor-pointer p-3">Categoria 3</li>
+            <li className="hover:underline cursor-pointer p-3">Categoria 4</li>
+            <li className="hover:underline cursor-pointer p-3">Categoria 5</li>
+        </ul>
     )
 };
