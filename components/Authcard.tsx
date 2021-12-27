@@ -12,8 +12,8 @@ type Props = {
 const AuthCard: NextPage<Props> = ({ title, buttonSubtitle, buttonTitle, route, action }): JSX.Element => {
     return (
         <div className="h-screen bg-gray-200">
-            <div className="absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 p-16 sm:p-6 flex flex-col items-center justify-between bg-white rounded shadow-lg">
-                <h1 className="text-2xl text-green-900 tracking-wide font-medium text-center sm:text-lg">{title}</h1>
+            <div className="absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 p-16 sm:p-8 flex flex-col items-center justify-between bg-white rounded shadow-lg">
+                <h1 className="text-2xl text-green-900 tracking-wide font-medium text-center">{title}</h1>
                 <br />
                 <div className="flex flex-col h-32 justify-evenly">
                     <input placeholder="Email" className="placeholder-green-700 text-sm outline-none focus:border-green-600 border border-green-700 p-2 text-green-700 rounded hover:opacity-95" />
