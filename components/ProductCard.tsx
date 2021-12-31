@@ -38,6 +38,7 @@ const ProductCard: React.FC<Props> = ({ product, showDetails }): JSX.Element => 
     return (
         //if I put block on the parent of the image component, the responsive way on layout prop
         //It's gonna work https://nextjs.org/docs/api-reference/next/image
+        
         <Link href={`/products/${_id}`}>
             <div
                 onMouseOver={() => !mobile && setHover(true)}
