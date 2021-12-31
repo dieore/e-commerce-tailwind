@@ -6,7 +6,7 @@ const Account = () => {
 
     return (
         <div>
-            Aca tendria que hacer una big card {currentUser.uid}
+            Aca tendria que hacer una big card {currentUser?.uid}
         </div>
     )
 };
