@@ -1,7 +1,5 @@
 import React, { useContext, useState } from "react";
 import AppContext from "../AppContext";
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
 
 const Account: React.FC = (): JSX.Element => {
     const [tab, setTab] = useState<number>(0);
