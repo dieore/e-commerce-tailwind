@@ -65,8 +65,7 @@ const LoginCard: React.FC<Props> = ({ title, buttonSubtitle, buttonTitle, route,
     return (
         <div className="font-light h-screen bg-gray-200">
             <div className="absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 p-20 flex flex-col items-center justify-between bg-white rounded shadow-lg">
-                <h1 className="text-3xl text-green-900 tracking-wide text-center">{title}</h1>
-                <br />
+                <h1 className="text-3xl text-green-900 tracking-wide text-center pb-5">{title}</h1>
                 <div className="w-full flex flex-col h-32 justify-evenly">
                     <input
                         name="email"
