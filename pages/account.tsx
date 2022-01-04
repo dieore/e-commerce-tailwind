@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import AppContext from "../AppContext";
+import MyProfile from "../components/MyProfile";
 
 const Account: React.FC = (): JSX.Element => {
     const [tab, setTab] = useState<number>(0);
@@ -29,7 +30,7 @@ const Account: React.FC = (): JSX.Element => {
             </div>
             <div className="col-span-5 h-screen bg-gray-200">
                 <Tabs tab={tab}>
-                    <h1>Mi perfil</h1>
+                    <MyProfile/>
                     <h1>Compras</h1>
                     <h1>Novedades</h1>
                     <h1>Consultas</h1>
