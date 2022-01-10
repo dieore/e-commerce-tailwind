@@ -27,7 +27,6 @@ const ProductDetailCard: React.FC<Props> = ({ product }): JSX.Element => {
     let styleOff: string = "w-20 border lg:w-10";
     let styleOn: string = "w-20 border border-2 border-gray-500 lg:w-10";
 
-    const [img, setImg] = useState<string>(product.imagen);
     const [quantity, setQuantity] = useState<number>(1);
     const [smallsImages, setSmallImages] = useState<SelectedImage>({
         0: styleOff,
@@ -42,7 +41,7 @@ const ProductDetailCard: React.FC<Props> = ({ product }): JSX.Element => {
                 <div className="p-4 flex flex-row-reverse justify-between lg:justify-center lg:flex-col">
                     <div className="w-full">
                         <Image
-                            src={img}
+                            src={imagen}
                             alt="Producto"
                             layout="responsive"
                             width="13rem"
