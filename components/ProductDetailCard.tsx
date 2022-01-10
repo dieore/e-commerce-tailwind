@@ -17,9 +17,6 @@ type Props = {
     product: Product
 }
 
-let styleOff: string;
-let styleOn: string;
-
 interface SelectedImage {
     0: string;
     1: string;
@@ -27,8 +24,8 @@ interface SelectedImage {
 }
 
 const ProductDetailCard: React.FC<Props> = ({ product }): JSX.Element => {
-    let styleOff = "w-20 border lg:w-10";
-    let styleOn = "w-20 border border-2 border-gray-500 lg:w-10";
+    let styleOff: string = "w-20 border lg:w-10";
+    let styleOn: string = "w-20 border border-2 border-gray-500 lg:w-10";
 
     const [img, setImg] = useState<string>(product.imagen);
     const [quantity, setQuantity] = useState<number>(1);
@@ -110,7 +107,7 @@ const ProductDetailCard: React.FC<Props> = ({ product }): JSX.Element => {
                     <div className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6 p-4">
                         {
                             [0, 1, 2, 3].map(p => (
-                                <ProductCard showDetails={true} product={{ nombre: "Proteina de arvejas vegana Granger 1kg", stock: 20, categoriaId: "5", descripcion: "Aporta proteínas que favorecen la recuperación muscular y el aumento de masa muscular.", precio: 200, imagen: "https://siempresano.com.ar:3009/api/containers/images/download/aritos de fruta.jpg" }} />
+                                <ProductCard showDetails={true} product={{ promo: true, _id: "617b007670e4c2107d188aad", nombre: "Proteina de arvejas vegana Granger 1kg", stock: 20, categoriaId: "5", descripcion: "Aporta proteínas que favorecen la recuperación muscular y el aumento de masa muscular.", precio: 200, imagen: "https://siempresano.com.ar:3009/api/containers/images/download/aritos de fruta.jpg" }} />
                             ))
                         }
                     </div>
