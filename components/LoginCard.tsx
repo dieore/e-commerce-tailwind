@@ -64,34 +64,34 @@ const LoginCard: React.FC<Props> = ({ title, buttonSubtitle, buttonTitle, route,
 
     return (
         <div className="font-light h-screen bg-gray-200">
-            <div className="absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 p-20 flex flex-col items-center justify-between bg-white rounded shadow-lg">
+            <div className="absolute sm:relative sm:h-screen left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 p-20 flex flex-col items-center justify-between sm:justify-center bg-white rounded shadow-lg">
                 <h1 className="text-3xl text-green-900 tracking-wide text-center pb-5">{title}</h1>
-                <div className="w-full flex flex-col h-32 justify-evenly">
+                <div className="w-full flex flex-col h-32 justify-evenly sm:text-sm">
                     <input
                         name="email"
                         placeholder="Email"
-                        className="placeholder-green-700 text-sm outline-none focus:border-green-600 border-b border-green-700 p-2 text-green-700"
+                        className="placeholder-green-700 outline-none focus:border-green-600 border-b border-green-700 p-2 text-green-700"
                         value={form.email}
                         onChange={handleForm}
                     />
                     <input
                         name="password"
                         placeholder="Contraseña"
-                        className="placeholder-green-700 text-sm outline-none focus:border-green-600 border-b border-green-700 p-2 text-green-700"
+                        className="placeholder-green-700 outline-none focus:border-green-600 border-b border-green-700 p-2 text-green-700"
                         value={form.password}
                         onChange={handleForm}
                     />
                 </div>
-                <div className="flex flex-col h-48 w-full justify-evenly">
+                <div className="flex flex-col h-48 w-full justify-evenly sm:text-sm">
                     <button onClick={handleAction}
                         className="border p-2 bg-green-700 text-white rounded hover:opacity-95"
                     >
                         {buttonTitle}
                     </button>
                     <button onClick={() => loginWithGoogle()}
-                        className="border p-2 text-green-800 rounded hover:opacity-95"
+                        className="border border-green-800 p-2 text-green-800 rounded hover:opacity-95"
                     >
-                        Google
+                        Ingresar con Google
                     </button>
                     <Link href={route}>
                         <a className="text-green-900 text-center p-2 border-green-700 rounded">{buttonSubtitle}</a>
