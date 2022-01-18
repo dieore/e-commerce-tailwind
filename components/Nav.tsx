@@ -30,7 +30,7 @@ const Nav: React.FC = () => {
                             : <a href="/" className="font-light text-2xl text-white tracking-wider cursor-pointer md:text-xl">TIENDAMAS</a>
                     }
                     <div className="flex items-center pl-3 lg:hidden">
-                        <input placeholder="Buscar producto" className="md:w-40 text-sm p-1 border border-solid outline-none focus:border-green-300" />
+                        <input placeholder="Buscar producto" className="rounded md:w-40 text-sm p-1 border border-solid outline-none focus:border-green-300" />
                         <img
                             src="/img/search.png"
                             // onClick={() => setOpenMenu(!openMenu)}

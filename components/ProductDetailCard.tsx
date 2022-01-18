@@ -113,7 +113,7 @@ const ProductDetailCard: React.FC<Props> = ({ product }): JSX.Element => {
                 </div>
                 <hr className="m-3 col-span-full" />
                 <div className="col-span-full p-4">
-                    <h2 className="font-medium" >Descripción del producto</h2>
+                    <h2 className="font-medium">Descripción del producto</h2>
                     <p className="pt-2 font-light tracking-wide" >{descripcion}</p>
                 </div>
             </div>

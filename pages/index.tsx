@@ -4,8 +4,7 @@ import ProductCard from '../components/ProductCard';
 import InfoCards from '../components/InfoCards';
 import PopularCategories from '../components/PopularCategories';
 import Slider from '../components/Slider'
-import { useEffect } from 'react';
-import ProductService from '../services/ProductService'
+import UserService from '../services/UserService';
 
 interface Products {
 	nombre: string;
@@ -68,6 +67,7 @@ const Home: NextPage<Props> = ({ products, categories }): JSX.Element => {
 }
 
 export async function getStaticProps(): Promise<any> {
+	const u = await UserService.create({name: "Fede", email: "fede@gmail.com"});
 	const client = await clientPromise;
 
 	const db = client.db();

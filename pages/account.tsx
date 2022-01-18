@@ -1,6 +1,9 @@
 import React, { useContext, useState } from "react";
 import AppContext from "../AppContext";
-import MyProfile from "../components/MyProfile";
+import MyProfile from "../components/Acccount/MyProfile";
+import MyShops from "../components/Acccount/MyShops";
+import MyQueries from "../components/Acccount/MyQueries";
+import News from "../components/Acccount/News";
 
 const Account: React.FC = (): JSX.Element => {
     const [tab, setTab] = useState<number>(0);
@@ -31,9 +34,9 @@ const Account: React.FC = (): JSX.Element => {
             <div className="col-span-5 h-screen bg-gray-200">
                 <Tabs tab={tab}>
                     <MyProfile/>
-                    <h1>Compras</h1>
-                    <h1>Novedades</h1>
-                    <h1>Consultas</h1>
+                    <MyShops/>
+                    <News/>
+                    <MyQueries/>
                 </Tabs>
             </div>
         </div>
@@ -49,7 +52,7 @@ type Props = {
 
 const Tabs: React.FC<Props> = ({ children, tab }): JSX.Element => {
     return (
-        <div className="bg-white p-4 m-4 rounded">
+        <div className="bg-white p-10 m-6 rounded">
             {children[tab]}
         </div>
     )

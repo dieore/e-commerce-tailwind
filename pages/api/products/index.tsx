@@ -2,7 +2,6 @@ import { ObjectId } from 'mongodb';
 import { NextApiRequest, NextApiResponse } from 'next';
 import clientPromise from '../../../lib/mongodb.js';
 
-
 export default async (req: NextApiRequest, res: NextApiResponse) => {
 	const { method, body } = req;
 
