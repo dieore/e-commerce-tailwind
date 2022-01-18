@@ -8,7 +8,7 @@ const News: React.FC = (): JSX.Element => {
         <>
             <h1 className="text-right text-sm italic pb-1">Novedades</h1>
             <hr />
-            <table className="w-full mt-4 font-light">
+            <table className="w-full mt-4 font-light md:text-sm">
                 <tr className="text-left text-green-800 text-sm">
                     <th>Fecha</th>
                     <th>Mensaje</th>
@@ -28,7 +28,7 @@ const News: React.FC = (): JSX.Element => {
                 open={isOpen}
                 setStateFromComponent={setIsOpen}
             >
-                <div className="absolute -left-2/4 -right-2/4 top-1/4 mx-auto w-2/3 md:w-full">
+                <div className="absolute -left-2/4 -right-2/4 top-1/4 mx-auto w-2/3 md:w-full md:text-sm">
                     <div className="flex flex-col justify-center p-8 w-full bg-white">
                         <h1 className="text-green-900">NOTICIA</h1>
                         <p>

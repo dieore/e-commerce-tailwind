@@ -52,7 +52,7 @@ type Props = {
 
 const Tabs: React.FC<Props> = ({ children, tab }): JSX.Element => {
     return (
-        <div className="bg-white p-10 m-6 rounded md:m-0 md:h-screen">
+        <div className="bg-white p-10 m-6 rounded md:p-3 md:m-0 md:h-screen">
             {children[tab]}
         </div>
     )
