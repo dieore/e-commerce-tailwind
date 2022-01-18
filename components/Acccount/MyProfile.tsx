@@ -17,7 +17,7 @@ const MyProfile = () => {
         <>
             <h1 className="text-right text-sm italic pb-1">Mi perfil</h1>
             <hr />
-            <div className="grid grid-cols-3 lg:grid-cols-1 py-3 gap-5">
+            <div className="grid grid-cols-3 lg:grid-cols-1 py-3 gap-5 my-3">
                 <div className="flex justify-between items-baseline lg:flex-col text-left">
                     <label className="text-xs">Nombre</label>
                     <input

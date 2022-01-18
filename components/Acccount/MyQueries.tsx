@@ -30,7 +30,7 @@ const MyQueries: React.FC = (): JSX.Element => {
                 setStateFromComponent={setIsOpen}
             >
                 <div className="absolute -left-2/4 -right-2/4 top-1/4 mx-auto w-2/3">
-                    <div className="flex flex-col justify-center h-64 p-8 w-full bg-white">
+                    <div className="flex flex-col justify-center p-8 w-full bg-white">
                         <h1 className="text-green-900">PREGUNTA</h1>
                         <p>Este sería el mensaje en el que yo escribo mi consulta, debería verse hasta todo lo que escribí.</p>
                         <br/>
