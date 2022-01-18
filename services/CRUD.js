@@ -1,27 +1,27 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-class CRUD {
-    constructor(model) {
-        this.baseURL = `http://localhost:3000/api/${model}`
-        this.http = axios.create();
-        this.http.defaults.baseURL = this.baseURL;
-    }
+// class CRUD {
+//     constructor(model) {
+//         this.baseURL = `http://localhost:3000/api/${model}`
+//         this.http = axios.create();
+//         this.http.defaults.baseURL = this.baseURL;
+//     }
 
-    async find() {
-        return await this.http.get();
-    }
+//     async find() {
+//         return await this.http.get();
+//     }
     
-    async findById(id) {
-        return await this.http.get("/" + id);
-    } 
+//     async findById(id) {
+//         return await this.http.get("/" + id);
+//     } 
 
-    async create(data) {
-        return await this.http.post("/", data);
-    }
+//     async create(data) {
+//         return await this.http.post("/", data);
+//     }
 
-    async update(id, data) {
-        return await this.http.patch("/" + id, data);
-    }
-}
+//     async update(id, data) {
+//         return await this.http.patch("/" + id, data);
+//     }
+// }
 
-export default CRUD;
+// export default CRUD;

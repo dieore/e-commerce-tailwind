@@ -1,5 +1,5 @@
 import { auth } from "../lib/firebase.config";
-import { createUserWithEmailAndPassword, FacebookAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut, UserCredential } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut, UserCredential } from "firebase/auth";
 
 interface AuthService {
     createUser: (email: string, password: string) => void;
