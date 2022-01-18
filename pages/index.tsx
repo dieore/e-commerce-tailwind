@@ -39,8 +39,9 @@ const Home: NextPage<Props> = ({ products, categories }): JSX.Element => {
 
 	return (
 		<>
-			<Slider images={["https://http2.mlstatic.com/D_NQ_749672-MLA48390149013_112021-OO.webp",
+			<Slider images={["https://http2.mlstatic.com/D_NQ_785995-MLA48811791164_012022-OO.webp",
 				"https://http2.mlstatic.com/D_NQ_808146-MLA48432871146_122021-OO.webp",
+				"https://http2.mlstatic.com/D_NQ_935561-MLA48831545527_012022-OO.webp",
 				"https://http2.mlstatic.com/D_NQ_884579-MLA48382963371_112021-OO.webp"]} />
 			<div className="p-8 bg-gray-200 sm:p-0">
 				<h2 className="p-4 text-gray-600 text-2xl font-light sm:pt-7">Más vendidos</h2>
