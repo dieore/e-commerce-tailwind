@@ -40,11 +40,12 @@ const Nav: React.FC = (): JSX.Element => {
                 </div>
                 <div className="xxl:hidden lg:flex items-center">
                     <hr className="h-7 w-0.5 mr-3 bg-white" />
-                    <img
-                        src="/img/shop.png"
-                        // onClick={() => setOpenMenu(!openMenu)}
-                        className="h-7 cursor-pointer xxl:hidden lg:flex justify-self-end"
-                    />
+                    <Link href="/cart">
+                        <img
+                            src="/img/shop.png"
+                            className="h-7 cursor-pointer xxl:hidden lg:flex justify-self-end"
+                        />
+                    </Link>
                     <img
                         src="/img/burguer.png"
                         onClick={() => setOpenMenu(!openMenu)}
