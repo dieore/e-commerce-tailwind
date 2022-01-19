@@ -22,7 +22,7 @@ const Nav: React.FC = () => {
 
     return (
         <>
-            <nav className="sticky top-0 z-10 flex justify-between lg:flex p-3 bg-green-900 items-center">
+            <nav className="sticky top-0 z-20 flex justify-between lg:flex p-3 bg-green-900 items-center">
                 <div className="flex justify-between w-1/5">
                     {
                         openMenu
