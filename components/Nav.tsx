@@ -4,7 +4,7 @@ import AppContext from '../AppContext';
 import { AuthService } from "../services/AuthService";
 import { useRouter, NextRouter } from 'next/router'
 
-const Nav: React.FC = () => {
+const Nav: React.FC = (): JSX.Element => {
     const { openMenu, setOpenMenu, currentUser } = useContext<any>(AppContext);
     const [showCategories, setShowCategories] = useState<boolean>(false);
     const router: NextRouter = useRouter();
@@ -64,11 +64,12 @@ const Nav: React.FC = () => {
                     {
                         currentUser && <a onClick={handleLogout} className="hover:underline hover:text-green-900 hover:bg-white p-1 px-3 rounded">Salir</a>
                     }
-                    <img
-                        src="/img/shop.png"
-                        // onClick={() => setOpenMenu(!openMenu)}
-                        className="h-7 cursor-pointer"
-                    />
+                    <Link href="/cart">
+                        <img
+                            src="/img/shop.png"
+                            className="h-7 cursor-pointer"
+                        />
+                    </Link>
                 </div>
             </nav>
             {
@@ -80,12 +81,12 @@ const Nav: React.FC = () => {
                             }
                             <div onMouseOver={() => setShowCategories(true)} onMouseLeave={() => setShowCategories(false)} className="flex flex-col justify-center">
                                 <a className="hover:underline p-5 cursor-pointer">Categorias</a>
-                                {showCategories && <Categories />}
+                                {showCategories && <Categories setOpenMenu={setOpenMenu} />}
                             </div>
-                            <a href="/products" className="hover:underline p-5 cursor-pointer">Productos</a>
-                            <a className="hover:underline p-5 cursor-pointer">Destacados</a>
-                            <a className="hover:underline p-5 cursor-pointer">Promos</a>
-                            <a className="hover:underline p-5 cursor-pointer">Contacto</a>
+                            <a onClick={() => setOpenMenu(!openMenu)} href="/products" className="hover:underline p-5 cursor-pointer">Productos</a>
+                            <a onClick={() => setOpenMenu(!openMenu)} className="hover:underline p-5 cursor-pointer">Destacados</a>
+                            <a onClick={() => setOpenMenu(!openMenu)} className="hover:underline p-5 cursor-pointer">Promos</a>
+                            <a onClick={() => setOpenMenu(!openMenu)} className="hover:underline p-5 cursor-pointer">Contacto</a>
                             {
                                 currentUser
                                     ? <a onClick={handleLogout} className="text-left hover:underline p-5 cursor-pointer">Salir</a>
@@ -102,14 +103,14 @@ const Nav: React.FC = () => {
 
 export default Nav;
 
-const Categories = () => {
+const Categories = ({ setOpenMenu }) => {
     return (
         <ul className="pl-5 text-sm">
-            <li className="hover:underline cursor-pointer p-3">Categoria 1</li>
-            <li className="hover:underline cursor-pointer p-3">Categoria 2</li>
-            <li className="hover:underline cursor-pointer p-3">Categoria 3</li>
-            <li className="hover:underline cursor-pointer p-3">Categoria 4</li>
-            <li className="hover:underline cursor-pointer p-3">Categoria 5</li>
+            <li onClick={() => setOpenMenu(false)} className="hover:underline cursor-pointer p-3">Categoria 1</li>
+            <li onClick={() => setOpenMenu(false)} className="hover:underline cursor-pointer p-3">Categoria 2</li>
+            <li onClick={() => setOpenMenu(false)} className="hover:underline cursor-pointer p-3">Categoria 3</li>
+            <li onClick={() => setOpenMenu(false)} className="hover:underline cursor-pointer p-3">Categoria 4</li>
+            <li onClick={() => setOpenMenu(false)} className="hover:underline cursor-pointer p-3">Categoria 5</li>
         </ul>
     )
 };

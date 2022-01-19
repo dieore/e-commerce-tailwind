@@ -10,7 +10,7 @@ type Props = {
     categories: Category[];
 }
 
-const PopularCategories: React.FC<Props> = ({ categories }) => {
+const PopularCategories: React.FC<Props> = ({ categories }): JSX.Element => {
     return (
         <>
             <h2 className="p-4 text-gray-600 text-2xl font-light">Categorias populares</h2>

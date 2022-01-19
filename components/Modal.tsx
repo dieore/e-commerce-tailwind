@@ -6,7 +6,7 @@ type Props = {
     setStateFromComponent: Function;
 }
 
-const Modal: React.FC<Props> = ({ children, open, setStateFromComponent }) => {
+const Modal: React.FC<Props> = ({ children, open, setStateFromComponent }): JSX.Element => {
     const [show, setShow] = useState<boolean>(open);
 
     const handleEscape = (e: KeyboardEvent): void => {

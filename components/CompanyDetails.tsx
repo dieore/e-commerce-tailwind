@@ -1,4 +1,4 @@
-const CompanyDetails = () => {
+const CompanyDetails: React.FC = (): JSX.Element => {
     return (
         <div className="p-10 bg-green-900">
             <div className="flex w-5/12 justify-between lg:w-4/6 sm:flex-col">

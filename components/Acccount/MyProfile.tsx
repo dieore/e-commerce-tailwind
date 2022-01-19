@@ -1,16 +1,7 @@
 import { useContext } from "react";
 import AppContext from "../../AppContext";
 
-// const inputs = {
-//     nombre: {
-//         label: "Nombre",
-//         name: "name",
-//         placeholder: "Nombre",
-
-//     }
-// }
-
-const MyProfile = () => {
+const MyProfile: React.FC = (): JSX.Element => {
     const { currentUser } = useContext<any>(AppContext);
     console.log(currentUser)
     return (

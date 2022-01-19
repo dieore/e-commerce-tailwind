@@ -5,7 +5,7 @@ type Props = {
     extra: string;
 }
 
-const Cards: React.FC<Props> = ({ title, subtitle, image, extra }) => {
+const Cards: React.FC<Props> = ({ title, subtitle, image, extra }): JSX.Element => {
     return (
         <div className="w-full bg-white h-48 flex flex-col text-center justify-evenly items-center shadow-md rounded">
             <img src={image.src} />

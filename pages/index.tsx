@@ -36,7 +36,6 @@ const Home: NextPage<Props> = ({ products, categories }): JSX.Element => {
 	// 	})()
 	// }, [])
 
-
 	return (
 		<>
 			<Slider images={["https://http2.mlstatic.com/D_NQ_785995-MLA48811791164_012022-OO.webp",
