@@ -6,36 +6,41 @@ interface Props {
 
 const Slider: React.FC<Props> = ({ images }): JSX.Element => {
     const [image, setImage] = useState<string>(images[0]);
-    const auto = useRef(true);
+    const auto = useRef<boolean>(true);
 
-    const sliderOn = () => {
+    const sliderOn = (): void => {
         setTimeout(() => {
             if (image === images[images.length - 1]) {
-                setImage(images[0])
+                setImage(images[0]);
             } else {
-                setImage(images[images.indexOf(image) + 1])
+                setImage(images[images.indexOf(image) + 1]);
             }
-        }, 2000)
+        }, 4000)
     };
 
     useEffect(() => {
         if (auto.current) sliderOn();
     }, [image])
 
+    let active = "w-2 h-2 border-2 rounded-full bg-green-800 scale-150 transform cursor-pointer";
+    let inactive = "w-2 h-2 border-2 rounded-full hover:bg-green-800 hover:scale-150 transform cursor-pointer";
+
     return (
-        <div className="grid grid-cols-3 h-80 bg-center bg-no-repeat bg-cover w-full" style={{ backgroundImage: `url(${image})` }}>
-            {/* <button className="col-start-1 justify-self-start p-3 self-center bg-gray-400 rounded h-20"></button> */}
+        <div className="grid grid-cols-3 h-80 w-full">
+            <div className="absolute h-80 w-full bg-center bg-no-repeat bg-cover" style={{ backgroundImage: `url(${image})` }}/>
             <div className="flex w-full justify-evenly col-start-2 self-end p-8 md:p-4">
                 {
                     images && images.map(i => (
-                        <div onClick={() => {
-                            auto.current = false;
-                            setImage(i);
-                        }} className="w-2 h-2 bg-gray-600 border rounded-full hover:bg-green-800 hover:scale-150 transform cursor-pointer" />
+                        <div
+                            className={i === image ? active : inactive}
+                            onClick={() => {
+                                auto.current = false;
+                                setImage(i);
+                            }}
+                        />
                     ))
                 }
             </div>
-            {/* <button className="col-start-3 justify-self-end p-3 self-center bg-gray-400 rounded h-20"></button> */}
         </div >
     )
 };
