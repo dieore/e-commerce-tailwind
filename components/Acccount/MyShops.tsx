@@ -3,6 +3,7 @@ import Modal from "../Modal";
 
 const MyShops: React.FC = (): JSX.Element => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const number = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' });
 
     return (
         <>
@@ -16,17 +17,17 @@ const MyShops: React.FC = (): JSX.Element => {
                 </tr>
                 <tr>
                     <td className="pt-2">{new Date().toLocaleDateString()}</td>
-                    <td className="pt-2">$500.-</td>
+                    <td className="pt-2">{number.format(500)}</td>
                     <td onClick={() => setIsOpen(true)} className="pt-2 hover:underline cursor-pointer">Ver</td>
                 </tr>
                 <tr>
                     <td className="pt-2">{new Date().toLocaleDateString()}</td>
-                    <td className="pt-2">$500.-</td>
+                    <td className="pt-2">{number.format(500)}</td>
                     <td onClick={() => setIsOpen(true)} className="pt-2 hover:underline cursor-pointer">Ver</td>
                 </tr>
                 <tr>
                     <td className="pt-2">{new Date().toLocaleDateString()}</td>
-                    <td className="pt-2">$500.-</td>
+                    <td className="pt-2">{number.format(500)}</td>
                     <td onClick={() => setIsOpen(true)} className="pt-2 hover:underline cursor-pointer">Ver</td>
                 </tr>
             </table>
