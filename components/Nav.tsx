@@ -91,7 +91,7 @@ const Nav: React.FC = (): JSX.Element => {
                             {
                                 currentUser
                                     ? <a onClick={handleLogout} className="text-left hover:underline p-5 cursor-pointer">Salir</a>
-                                    : <Link href="/login"><a className="text-left hover:underline p-5 cursor-pointer">Ingresar</a></Link>
+                                    : <Link href="/login"><a onClick={() => setOpenMenu(!openMenu)} className="text-left hover:underline p-5 cursor-pointer">Ingresar</a></Link>
                             }
                         </div>
                         <a href="/" className="font-light text-2xl tracking-wider cursor-pointer mb-16 p-5 self-center md:text-base">TIENDAMAS</a>
