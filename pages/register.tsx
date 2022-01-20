@@ -38,7 +38,7 @@ const Register = () => {
 
     return (
         <div className="font-light bg-gray-200 py-12 md:py-0">
-            <div className="relative z-10 w-3/6 sm:w-full m-auto p-16 sm:p-8 md:w-full bg-white rounded shadow-lg">
+            <div className="md:h-screen relative z-10 w-3/6 sm:w-full m-auto p-16 sm:p-8 md:w-full bg-white rounded shadow-lg">
                 <h1 className="text-3xl text-green-900 tracking-wide text-center">Registro</h1>
                 <br />
                 <input
