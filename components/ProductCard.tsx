@@ -46,12 +46,9 @@ const ProductCard: React.FC<Props> = ({ product, showDetails }): JSX.Element => 
                 className={hover ? "rounded bg-white w-full hover:shadow-2xl cursor-pointer" : "h-80 rounded bg-white w-full hover:shadow-2xl cursor-pointer"}
             >
                 <div className="block rounded">
-                    <Image
+                    <img
                         src={imagen}
                         alt="Producto"
-                        layout="responsive"
-                        width="13rem"
-                        height="13rem"
                         className="rounded-t"
                     />
                 </div>
