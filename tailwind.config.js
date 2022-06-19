@@ -16,14 +16,19 @@ module.exports = {
       display: ["Oswald"],
       body: ["Open Sans"],
     },
-    extend: {},
+    extend: {
+      height: {
+        500: "500px",
+        84: "22rem"
+      }
+    },
     screens: {
       // 'xxl': { 'max': '3000px' },
       // => @media (max-width: 1279px) { ... }
       xl: { max: "3000px" },
       // => @media (max-width: 1279px) { ... }
 
-      lg: { max: "1023px" },
+      lg: { max: "1300px" },
       // => @media (max-width: 1023px) { ... }
 
       md: { max: "768px" },

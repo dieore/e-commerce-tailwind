@@ -43,13 +43,13 @@ const ProductCard: React.FC<Props> = ({ product, showDetails }): JSX.Element => 
             <div
                 onMouseOver={() => !mobile && setHover(true)}
                 onMouseLeave={() => !mobile && !showDetails && setHover(false)}
-                className={hover ? "rounded bg-white w-full hover:shadow-2xl cursor-pointer" : "h-80 rounded bg-white w-full hover:shadow-2xl cursor-pointer"}
+                className={hover ? "rounded bg-white w-full hover:shadow-2xl cursor-pointer" : "h-84 rounded bg-white w-full hover:shadow-2xl cursor-pointer"}
             >
-                <div className="block rounded">
+                <div className="rounded flex justify-center">
                     <img
                         src={imagen}
                         alt="Producto"
-                        className="rounded-t"
+                        className="rounded-t md:h-auto lg:h-56 xl:h-64"
                     />
                 </div>
                 <hr />

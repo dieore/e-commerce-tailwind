@@ -39,11 +39,11 @@ const ProductDetailCard: React.FC<Props> = ({ product }): JSX.Element => {
         <>
             <div className="grid bg-white shadow-lg rounded p-3 grid-cols-2 sm:grid-cols-1">
                 <div className="p-4 flex flex-row-reverse justify-between lg:justify-center lg:flex-col">
-                    <div className="w-full">
+                    <div className="w-full flex justify-center items-center">
                         <img
                             src={imagen}
                             alt="Producto"
-                            className="rounded"
+                            className="rounded-t h-96 sticky top-0"
                         />
                     </div>
                     <div className="flex flex-col justify-evenly mt-2 p-4 lg:p-0 lg:flex-row">
@@ -56,6 +56,7 @@ const ProductDetailCard: React.FC<Props> = ({ product }): JSX.Element => {
                                     <img
                                         src={imagen}
                                         alt="Producto"
+                                        className="rounded-t sm:h-auto h-64"
                                     />
                                 </div>
                             ))
@@ -100,7 +101,7 @@ const ProductDetailCard: React.FC<Props> = ({ product }): JSX.Element => {
                     <div className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6 p-4">
                         {
                             [0, 1, 2, 3].map(p => (
-                                <ProductCard showDetails={true} product={{ promo: true, _id: "617b007670e4c2107d188aad", nombre: "Proteina de arvejas vegana Granger 1kg", stock: 20, categoriaId: "5", descripcion: "Aporta proteínas que favorecen la recuperación muscular y el aumento de masa muscular.", precio: 200, imagen: "https://siempresano.com.ar:3009/api/containers/images/download/aritos de fruta.jpg" }} />
+                                <ProductCard showDetails={true} product={{ promo: true, _id: "617b007670e4c2107d188aad", nombre: "Proteina de arvejas vegana Granger 1kg", stock: 20, categoriaId: "5", descripcion: "Aporta proteínas que favorecen la recuperación muscular y el aumento de masa muscular.", precio: 200, imagen: "https://siempresano.com.ar:3009/api/containers/images/download/fideos fusilli waka maiz.png" }} />
                             ))
                         }
                     </div>
