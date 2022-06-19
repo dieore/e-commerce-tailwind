@@ -43,7 +43,7 @@ const ProductDetailCard: React.FC<Props> = ({ product }): JSX.Element => {
                         <img
                             src={imagen}
                             alt="Producto"
-                            className="rounded-t h-96 sticky top-0"
+                            className="rounded-t sm:h-auto h-96 sticky top-0"
                         />
                     </div>
                     <div className="flex flex-col justify-evenly mt-2 p-4 lg:p-0 lg:flex-row">
