@@ -49,7 +49,7 @@ const ProductCard: React.FC<Props> = ({ product, showDetails }): JSX.Element => 
                     <img
                         src={imagen}
                         alt="Producto"
-                        className="rounded-t md:h-auto lg:h-56 xl:h-64"
+                        className="rounded-t sm:h-auto md:h-auto lg:h-56 xl:h-64"
                     />
                 </div>
                 <hr />

@@ -43,7 +43,7 @@ const Home: NextPage<Props> = ({ products, categories }): JSX.Element => {
 				"https://http2.mlstatic.com/D_NQ_935561-MLA48831545527_012022-OO.webp",
 				"https://http2.mlstatic.com/D_NQ_884579-MLA48382963371_112021-OO.webp"]} />
 			<div className="p-8 bg-gray-200 sm:p-0">
-				<h2 className="p-4 text-gray-600 text-2xl font-light sm:pt-7">Más vendidos</h2>
+				<h2 className="p-4 pb-0 text-gray-600 text-2xl font-light sm:pt-7">Más vendidos</h2>
 				<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2 sm:gap-3">
 					{
 						products.map(p => (
@@ -51,7 +51,7 @@ const Home: NextPage<Props> = ({ products, categories }): JSX.Element => {
 						))
 					}
 				</div>
-				<h2 className="p-4 text-gray-600 text-2xl font-light">Ofertas</h2>
+				<h2 className="pt-10 px-4 text-gray-600 text-2xl font-light">Ofertas</h2>
 				<div className="h-96 justify-items-center gap-6 p-4 grid xl:grid-cols-5 lg:grid-cols-4 lg:h-auto md:grid-cols-3 sm:grid-cols-2 sm:gap-3">
 					{
 						products.map(p => (

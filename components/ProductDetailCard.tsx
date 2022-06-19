@@ -56,7 +56,6 @@ const ProductDetailCard: React.FC<Props> = ({ product }): JSX.Element => {
                                     <img
                                         src={imagen}
                                         alt="Producto"
-                                        className="rounded-t sm:h-auto h-64"
                                     />
                                 </div>
                             ))
